@@ -1,0 +1,11 @@
+﻿global using BeghTools.ViewModels.Windows;
+global using BeghTools.ViewModels.Pages;
+global using BeghTools.ViewModels.Shared;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using Microsoft.Extensions.DependencyInjection;
+global using BeghTools.Core.Models;
+global using BeghTools.Core.Services;
+global using BeghTools.Core.Interfaces;
+global using BeghTools.Core.Attributes;
+global using static BeghTools.Core.GlobalHelpers;

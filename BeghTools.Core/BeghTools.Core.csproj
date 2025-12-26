@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="C:\Users\Administrator\.nuget\packages\webpdotnet\1.2.0.20210418\build\..\runtimes\win-AnyCPU\native\WebPDotNetNative.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dynamicweb.WebP" Version="3.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Windows.Compatibility" Version="10.0.1" />
+		<PackageReference Include="System.Drawing.Common" Version="10.0.1" />
+	</ItemGroup>
+
+</Project>

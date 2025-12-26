@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>App.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Resource Include="Assets\Icons\**\*.*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="App.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="App.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Costura.Fody" Version="6.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Fody" Version="6.9.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc5.4" />
+		<PackageReference Include="XamlFlair.WPF" Version="1.2.13" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BeghTools.ViewModels\BeghTools.ViewModels.csproj" />
+		<ProjectReference Include="..\BeghTools.Core\BeghTools.Core.csproj" />
+		<ProjectReference Include="..\PresentationFramework.Fluent\PresentationFramework.Fluent.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="App.ico">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+</Project>
