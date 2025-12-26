@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
+    <File Path="README.md" />
   </Folder>
   <Project Path="BeghTools.Core/BeghTools.Core.csproj" />
   <Project Path="BeghTools.ViewModels/BeghTools.ViewModels.csproj" Id="6c177790-bc1d-44ef-942b-02813d2aa8e5" />
