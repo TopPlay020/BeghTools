@@ -6,6 +6,16 @@
 		<LangVersion>8.0</LangVersion>
 		<UseWPF>true</UseWPF>
 		<ApplicationIcon>App.ico</ApplicationIcon>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <Prefer32Bit>False</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <Prefer32Bit>False</Prefer32Bit>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -15,7 +25,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Costura32\**" />
+	  <Compile Remove="Costura64\**" />
+	  <EmbeddedResource Remove="Costura32\**" />
+	  <EmbeddedResource Remove="Costura64\**" />
+	  <None Remove="Costura32\**" />
+	  <None Remove="Costura64\**" />
+	  <Page Remove="Costura32\**" />
+	  <Page Remove="Costura64\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="App.ico" />
+	  <None Remove="costura-win-x64\libSkiaSharp.dll" />
+	  <None Remove="costura-win-x64\libwebp_x64.dll" />
+	  <None Remove="costura-win-x86\libSkiaSharp.dll" />
+	  <None Remove="costura-win-x86\libwebp_x86.dll" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -45,5 +70,9 @@
 	  <Resource Include="App.ico">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Resource>
+	  <EmbeddedResource Include="costura-win-x64\libSkiaSharp.dll" />
+	  <EmbeddedResource Include="costura-win-x64\libwebp_x64.dll" />
+	  <EmbeddedResource Include="costura-win-x86\libSkiaSharp.dll" />
+	  <EmbeddedResource Include="costura-win-x86\libwebp_x86.dll" />
 	</ItemGroup>
 </Project>

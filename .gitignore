@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/BeghTools.Views/costura-win-x64
+/BeghTools.Views/costura-win-x86

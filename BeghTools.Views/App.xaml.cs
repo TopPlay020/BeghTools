@@ -3,6 +3,7 @@ using BeghTools.Core.Attributes;
 using BeghTools.Core.Interfaces;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Threading;
 using static BeghTools.Core.GlobalHelpers;
 
 namespace BeghTools.Views
@@ -14,7 +15,9 @@ namespace BeghTools.Views
     {
         protected override void OnStartup(StartupEventArgs startupEventArgs)
         {
+            this.DispatcherUnhandledException += App_DispatcherUnhandledException;
             BeghCore.InitializeServices();
+
 
             if (startupEventArgs.Args.Length != 0)
                 foreach (var type in GetTypesImplementing<IArgumentPlayable>())
@@ -34,6 +37,13 @@ namespace BeghTools.Views
                     GetRequiredService<IAutoStartGUI>(type);
             }
         }
+
+        private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+            MessageBox.Show($"An unhandled exception occurred: {e.Exception.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
     }
 
 }
